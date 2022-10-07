@@ -2,6 +2,7 @@
 
 ## Application Architecture
 
+![Untitled Diagram](https://user-images.githubusercontent.com/204423/194636202-29c31fc6-2899-44b9-8407-93c94ab52329.jpg)
 
 ## Spring MVC
 
