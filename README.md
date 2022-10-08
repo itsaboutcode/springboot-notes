@@ -89,7 +89,7 @@ public String method1(){
 }
 ```
 
-4 - **`@RequestMapping` with HTTP Method:** Sometimes we want to perform different operations based on the HTTP method used, even though request URI remains same.
+4 - **`@RequestMapping` with HTTP Method:** Sometimes we want to perform different operations based on the HTTP method used, even though request URI remains same. If you don't specify the method, method is `GET`
 
 ```
 @RequestMapping(value="/method2", method=RequestMethod.POST)
@@ -175,7 +175,6 @@ public String method8(@PathVariable("id") long id, @PathVariable("name") String 
 
 `@RequestMapping` with `@RequestParam` for URL parameters in the request URL, mostly in `GET` requests.
 
-
 ```
 @RequestMapping(value="/method9")
 @ResponseBody
@@ -184,7 +183,19 @@ public String method9(@RequestParam("id") int id){
 }
 ```
 
-For this method to work, the parameter name should be "id" and it should be of type int.
+For this method to work, the parameter name should be "id" and it should be of type int. If param name and variable name are the same, you can use could remove the "id" in @RequestParam.
+
+```
+@RequestMapping(value="/method9")
+@ResponseBody
+public String method9(@RequestParam int id){
+	return "method9 with id= "+id;
+}
+```
+
+### @GetMapping, @PostMapping, @PutMapping, @DeleteMapping and @PatchMapping.
+
+These mappings works exactly the same way as `@RequestMapping` except you don't have to specify the method as it's clear from the annoation name.
 
 
 # Reference
