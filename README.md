@@ -4,7 +4,7 @@
 
 ![Untitled Diagram](https://user-images.githubusercontent.com/204423/194636202-29c31fc6-2899-44b9-8407-93c94ab52329.jpg)
 
-## Spring MVC
+## [Spring MVC](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc)
 
 ![SpringResponseBodyAnnotation](https://user-images.githubusercontent.com/204423/194721555-60729dee-0e51-426e-8e91-ad42fb78843f.jpg)
 
@@ -20,10 +20,54 @@ public class Employee {
 }
 ```
 
+### @RequestBody Annotation
+
+- @RequestBody annotation maps the HttpRequest body to a transfer or domain object, enabling automatic deserialization of the inbound HttpRequest body onto a Java object.
+- Spring automatically deserializes the JSON into a Java type, assuming an appropriate one is specified.
+
+```
+@RequestMapping(method = RequestMethod.POST)
+@ResponseBody
+public HttpStatus something(@RequestBody MyModel myModel) 
+{
+    return HttpStatus.OK;
+}
+```
+
+### @RequestBody – Map Version
+
+```
+@RestController
+public class HelloController {
+
+  @RequestMapping(path = "/v2/login", method = RequestMethod.POST)
+  public boolean validateLoginMapVersion(@RequestBody Map<String, String> login) {
+
+      if (login == null) return false;
+      String username = login.get("username");
+      String password = login.get("password");
+
+      // simple check
+      if ("mkyong".equalsIgnoreCase(username) && "123456".equals(password)) {
+          return true;
+      } else {
+          return false;
+      }
+  }
+
+}
+```
+
+The `@RequestBody` annotation comes with the `required` attribute that defaults to `true`.  Above all, this enforces that a request always contains body content. If not so, an exception is thrown. You can switch this to `false` if you prefer null to be passed when the body content is null.
+
+```
+@PostMapping("users")
+@ResponseStatus(HttpStatus.CREATED)
+public User registerUserCredential(@RequestBody User user, required=”false”)
+```
 
 ### `@ResponseBody` annotation.
 
-- You map methods inside your controller to URI using `RequestMapping` annotation and also put `@ResponseBody` annotation.
 - The `@ResponseBody` annotation tells a controller that the object returned is automatically serialized into JSON and passed back into the HttpResponse object.
 
 
@@ -198,9 +242,15 @@ public String method9(@RequestParam int id){
 These mappings works exactly the same way as `@RequestMapping` except you don't have to specify the method as it's clear from the annoation name.
 
 
+### @ResponseStatus
+
+
+
 # Reference
 
 - https://spring.io/projects/spring-boot
 - https://start.spring.io/
+- https://projectlombok.org/
 - https://www.tutorialspoint.com/spring_boot/index.htm
 - https://www.tutorialspoint.com/jackson/jackson_overview.htm
+- https://howtodoinjava.com/series/spring-boot-tutorial/
