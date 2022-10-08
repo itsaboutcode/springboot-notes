@@ -131,6 +131,62 @@ public String method6(){
 }
 ```
 
+7 - **`@RequestMapping` default method:** If value is empty for a method, it works as default method for the controller class. 
+
+```
+@RequestMapping()
+@ResponseBody
+public String defaultMethod(){
+	return "default method";
+}
+```
+
+8 - **`@RequestMapping` fallback method:** We can create a fallback method for the controller class to make sure we are catching all the client requests even though there are no matching handler methods. It is useful in sending custom 404 response pages to users when there are no handler methods for the request.
+
+```
+@RequestMapping("*")
+@ResponseBody
+public String fallbackMethod(){
+	return "fallback method";
+}
+```
+
+### @PathVariable Annotation
+
+`@RequestMapping` with `@PathVariable` annotation can be used to handle dynamic URIs where one or more of the URI value works as a parameter.
+
+
+
+```
+@RequestMapping(value="/method7/{id}")
+@ResponseBody
+public String method7(@PathVariable("id") int id){
+	return "method7 with id="+id;
+}
+	
+@RequestMapping(value="/method8/{id:[\\d]+}/{name}")
+@ResponseBody
+public String method8(@PathVariable("id") long id, @PathVariable("name") String name){
+	return "method8 with id= "+id+" and name="+name;
+}
+```
+
+### @RequestParam Annotation
+
+`@RequestMapping` with `@RequestParam` for URL parameters in the request URL, mostly in `GET` requests.
+
+
+```
+@RequestMapping(value="/method9")
+@ResponseBody
+public String method9(@RequestParam("id") int id){
+	return "method9 with id= "+id;
+}
+```
+
+For this method to work, the parameter name should be "id" and it should be of type int.
+
+
 # Reference
 
 - https://spring.io/projects/spring-boot
