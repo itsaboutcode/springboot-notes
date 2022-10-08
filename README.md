@@ -242,7 +242,74 @@ public String method9(@RequestParam int id){
 These mappings works exactly the same way as `@RequestMapping` except you don't have to specify the method as it's clear from the annoation name.
 
 
-### @ResponseStatus
+### @ResponseStatus Annotation
+
+### @Value Annotation
+
+### ResponseEntity class
+
+- ResponseEntity represents the whole HTTP response: **status code, headers, and body**. As a result, we can use it to fully configure the HTTP response.
+
+```
+@GetMapping("/hello")
+ResponseEntity<String> hello() {
+    return new ResponseEntity<>("Hello World!", HttpStatus.OK);
+}
+
+// Different Status
+@GetMapping("/age")
+ResponseEntity<String> age(
+  @RequestParam("yearOfBirth") int yearOfBirth) {
+ 
+    if (isInFuture(yearOfBirth)) {
+        return new ResponseEntity<>(
+          "Year of birth cannot be in the future", 
+          HttpStatus.BAD_REQUEST);
+    }
+
+    return new ResponseEntity<>(
+      "Your age is " + calculateAge(yearOfBirth), 
+      HttpStatus.OK);
+}
+
+// Header Example
+@GetMapping("/customHeader")
+ResponseEntity<String> customHeader() {
+    HttpHeaders headers = new HttpHeaders();
+    headers.add("Custom-Header", "foo");
+        
+    return new ResponseEntity<>(
+      "Custom header set", headers, HttpStatus.OK);
+}
+```
+
+- ResponseEntity provides two nested builder interfaces: **HeadersBuilder** and its subinterface, **BodyBuilder**. 
+
+```
+@GetMapping("/hello")
+ResponseEntity<String> hello() {
+    return ResponseEntity.ok("Hello World!");
+}
+
+@GetMapping("/age")
+ResponseEntity<String> age(@RequestParam("yearOfBirth") int yearOfBirth) {
+    if (isInFuture(yearOfBirth)) {
+        return ResponseEntity.badRequest()
+            .body("Year of birth cannot be in the future");
+    }
+
+    return ResponseEntity.status(HttpStatus.OK)
+        .body("Your age is " + calculateAge(yearOfBirth));
+}
+
+
+@GetMapping("/customHeader")
+ResponseEntity<String> customHeader() {
+    return ResponseEntity.ok()
+        .header("Custom-Header", "foo")
+        .body("Custom header set");
+}
+```
 
 
 
