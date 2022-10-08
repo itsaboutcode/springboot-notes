@@ -246,6 +246,17 @@ These mappings works exactly the same way as `@RequestMapping` except you don't 
 
 ### @Value Annotation
 
+- Spring @Value annotation is used to **assign default values to variables and method arguments.** We can **read spring environment variable**s as well as **system variables** using @Value annotation. Spring @Value annotation also supports **SpEL.**
+
+### Spring @Value - Default Value
+
+- We can assign default value to a class property using @Value annotation.
+
+```
+@Value("Default DBConfiguration")
+private String defaultName;
+```
+
 ### ResponseEntity class
 
 - ResponseEntity represents the whole HTTP response: **status code, headers, and body**. As a result, we can use it to fully configure the HTTP response.
