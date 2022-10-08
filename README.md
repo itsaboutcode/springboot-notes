@@ -8,6 +8,8 @@
 
 ![SpringResponseBodyAnnotation](https://user-images.githubusercontent.com/204423/194721555-60729dee-0e51-426e-8e91-ad42fb78843f.jpg)
 
+### `@Controller` Annotation
+
 - In Spring MVC, any class which has the annotation `@Controller` can handle HTTP requests.
 
 ```
@@ -17,6 +19,9 @@ import org.springframework.stereotype.Controller;
 public class Employee {
 }
 ```
+
+
+### `@ResponseBody` annotation.
 
 - You map methods inside your controller to URI using `RequestMapping` annotation and also put `@ResponseBody` annotation.
 - The `@ResponseBody` annotation tells a controller that the object returned is automatically serialized into JSON and passed back into the HttpResponse object.
@@ -33,6 +38,8 @@ public class Employee {
     }
 }
 ```
+
+### `@RestController` annotation
 
 - `@RestController` annotation combination of the `@Controller` and `@ResponseBody` annotation. 
 
