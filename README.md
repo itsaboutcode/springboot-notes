@@ -22,7 +22,7 @@ public class Employee {
 
 ### @RequestBody Annotation
 
-- @RequestBody annotation maps the HttpRequest body to a transfer or domain object, enabling automatic deserialization of the inbound HttpRequest body onto a Java object.
+- `@RequestBody` annotation maps the `HttpRequest body` to a transfer or domain object, enabling automatic `deserialization` of the inbound `HttpRequest body` onto a Java object.
 - Spring automatically deserializes the JSON into a Java type, assuming an appropriate one is specified.
 
 ```
@@ -113,7 +113,7 @@ public class HomeController {
 - Now `/home` is the URI for which this controller will be used.
 
 
-2 = **`@RequestMapping` with Method:** We can use it with method to provide the URI pattern for which handler method will be used.
+2 **`@RequestMapping` with Method:** We can use it with method to provide the URI pattern for which handler method will be used.
 
 ```
 @RequestMapping(value="/method0")
@@ -227,7 +227,7 @@ public String method9(@RequestParam("id") int id){
 }
 ```
 
-For this method to work, the parameter name should be "id" and it should be of type int. If param name and variable name are the same, you can use could remove the "id" in @RequestParam.
+For this method to work, the parameter name should be "id" and it should be of type int. If param name and variable name are the same, you can use could remove the "id" in `@RequestParam.`
 
 ```
 @RequestMapping(value="/method9")
@@ -246,11 +246,11 @@ These mappings works exactly the same way as `@RequestMapping` except you don't 
 
 ### @Value Annotation
 
-- Spring @Value annotation is used to **assign default values to variables and method arguments.** We can **read spring environment variable**s as well as **system variables** using @Value annotation. Spring @Value annotation also supports **SpEL.**
+- Spring `@Value` annotation is used to **assign default values to variables and method arguments.** We can **read spring environment variable**s as well as **system variables** using @Value annotation. Spring `@Value` annotation also supports **SpEL.**
 
 ### Spring @Value - Default Value
 
-- We can assign default value to a class property using @Value annotation.
+- We can assign default value to a class property using `@Value` annotation.
 
 ```
 @Value("Default DBConfiguration")
@@ -259,7 +259,7 @@ private String defaultName;
 
 ### ResponseEntity class
 
-- ResponseEntity represents the whole HTTP response: **status code, headers, and body**. As a result, we can use it to fully configure the HTTP response.
+- `ResponseEntity` represents the whole HTTP response: **status code, headers, and body**. As a result, we can use it to fully configure the HTTP response.
 
 ```
 @GetMapping("/hello")
@@ -294,7 +294,7 @@ ResponseEntity<String> customHeader() {
 }
 ```
 
-- ResponseEntity provides two nested builder interfaces: **HeadersBuilder** and its subinterface, **BodyBuilder**. 
+- `ResponseEntity` provides two nested builder interfaces: **HeadersBuilder** and its subinterface, **BodyBuilder**. 
 
 ```
 @GetMapping("/hello")
