@@ -1,5 +1,26 @@
 # SpringBoot
 
+## Dependency Injection
+
+- Its is a **design pattern** in which an **object or function** receives other **objects or functions** that it depends on.
+- **How** an object/function is **created** and then **INJECTED** where it's needed is the CRUX of Depependcy injection.
+
+### Method Parameter Example
+- In below example, **myDrawMethod** method have depency on Shape object.
+- You create that object somewhere your application or within same file and **pass/inject** into the method.
+
+![Screenshot 2022-10-15 at 10 48 29 PM](https://user-images.githubusercontent.com/204423/196001288-4eb6c77f-e209-47d5-9b97-4928cefad450.png)
+
+### Class Member Example
+
+- In example below, a class have an instance of `Shape` or you can say, class have a `dependency` of `Shape` object.
+- You create and then inject it e.g; in the main class of this java program.
+
+![Screenshot 2022-10-15 at 10 49 09 PM](https://user-images.githubusercontent.com/204423/196001544-f936a83b-e968-463a-9cd1-03234b200aa3.png)
+
+- Spring solve the problem of **creating and injecting** the dependency using XML.
+
+
 ## Application Architecture
 
 ![Untitled Diagram](https://user-images.githubusercontent.com/204423/194636202-29c31fc6-2899-44b9-8407-93c94ab52329.jpg)
