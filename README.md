@@ -21,6 +21,41 @@
 - Spring solve the problem of **creating and injecting** the dependency using XML.
 
 
+## Beans vs POJO
+
+- https://www.geeksforgeeks.org/pojo-vs-java-beans/
+- https://stackoverflow.com/questions/1394265/what-is-the-difference-between-a-javabean-and-a-pojo?answertab=scoredesc#tab-top
+
+![pojo vs bean](https://user-images.githubusercontent.com/204423/196002409-aa6537a1-9108-45ab-84c5-2e738c5c2094.png)
+
+## Spring Factory Bean
+
+- Spring is **container** of **Beans.**
+- Spring behave as **factory** of beans => it produce those beans.
+
+### Factory Pattern
+
+- As we discussed about in Dependency Injection, instead of creating your depdencies, someone else produce those depdencies. That someone else is called a **FACTORY**.
+- To produce your depdency, FACTORY need sepcifications from you and then produce the depedency as per your specification.
+- Dependencies also provide their specs to the FACTORY so that whenever someone ask for them, it can produce it.
+
+
+![factory_pattern](https://user-images.githubusercontent.com/204423/196003231-a14574c7-42d0-48ff-b621-56ae1a6f55d6.png)
+
+
+
+### Spring Container
+
+- Spring is Container/Factory of Beans.
+- It handle the instantiation, whole lifecycle, and destruction of objects.
+
+
+![spring-container](https://user-images.githubusercontent.com/204423/196002951-ec3c6404-b53d-4bc4-9e3e-d0c4b5c087d1.png)
+
+
+![Spring_Bean_Factory](https://user-images.githubusercontent.com/204423/196003269-909d45ec-de7b-4835-ad5d-d9b6eaa16fe8.png)
+
+
 ## Application Architecture
 
 ![Untitled Diagram](https://user-images.githubusercontent.com/204423/194636202-29c31fc6-2899-44b9-8407-93c94ab52329.jpg)
