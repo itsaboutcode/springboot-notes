@@ -3,13 +3,44 @@
 **Software Development** => *The only constant is change.*
 
 - Spring application is composed of many different **components** and when the application run, those components must be created and introduced with each other.
-- Spring introduce the concept of **container**, which create and manage those components.
+- Spring introduce the concept of **container**, which *create and manage* those components.
 - These **components/beans** are **wired together *inside*** Spring Application **Context**. 
 - The **Act** of wiring components is done using pattern called **Depdency Injection.**
 
 > Rather than have components create and maintain the lifecycle of other beans that they depend on, a dependency-injected application relies on a separate entity (the container) to create and maintain all components and inject those into the beans that need them. This is done typically through constructor arguments or property accessor methods.
 
+- Historically, Spring application context used to wire beans together was with one or more XML files that described the components and their relationship to other components.
 
+```
+<bean id="inventoryService"
+	class="com.example.InventoryService" />
+
+<bean id="productService"
+	class="com.example.ProductService" />
+	<constructor-arg ref="inventoryService" />
+</bean>
+```
+
+- Now Java-based configuration is more common.
+
+```
+@Configuration
+public class ServiceConfiguration {
+
+@Bean
+public InventoryService inventoryService() {
+	return new InventoryService();
+}
+
+@Bean
+public ProductService productService() {
+	return new ProductService(inventoryService());
+    }
+}
+
+```
+
+- `@Configuration` annotation indicates to Spring that this is a configuration class that will provide beans to the Spring application context. The configuration’s class methods are annotated with `@Bean`, indicating that the objects they return should be added as beans in the application context
 
 ## Dependency Injection (DI)
 
