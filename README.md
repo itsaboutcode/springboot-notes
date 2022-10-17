@@ -430,3 +430,4 @@ ResponseEntity<String> customHeader() {
 - https://www.tutorialspoint.com/spring_boot/index.htm
 - https://www.tutorialspoint.com/jackson/jackson_overview.htm
 - https://howtodoinjava.com/series/spring-boot-tutorial/
+- https://en.wikibooks.org/wiki/Java_Persistence
