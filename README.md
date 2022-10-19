@@ -7,7 +7,11 @@
 - These **components/beans** are **wired together *inside*** Spring Application **Context**. 
 - The **Act** of wiring components is done using pattern called **Depdency Injection.**
 
-> Rather than have components create and maintain the lifecycle of other beans that they depend on, a dependency-injected application relies on a separate entity (the container) to create and maintain all components and inject those into the beans that need them. This is done typically through constructor arguments or property accessor methods.
+> Rather than have components create and maintain the lifecycle of other beans that they depend on, a dependency-injected application relies on a separate entity (the container) to create and maintain all components and inject those into the beans that need them. This is done typically through 8constructor arguments or property accessor methods*.
+
+> Dependency injection is basically providing the objects that an object needs (its dependencies) instead of having it construct them itself. It's a very useful technique for testing, since it allows dependencies to be mocked or stubbed out.
+
+> It decouple the construction of classes from the construction of its dependencies.
 
 - Historically, Spring application context used to wire beans together was with one or more XML files that described the components and their relationship to other components.
 
