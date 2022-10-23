@@ -435,3 +435,30 @@ ResponseEntity<String> customHeader() {
 - https://www.tutorialspoint.com/jackson/jackson_overview.htm
 - https://howtodoinjava.com/series/spring-boot-tutorial/
 - https://en.wikibooks.org/wiki/Java_Persistence
+
+
+# Youtube Channels
+
+- https://www.youtube.com/c/JavaTechie
+- https://www.youtube.com/c/LearnCodeWithDurgesh
+- https://www.youtube.com/c/Telusko
+- https://www.youtube.com/c/Freecodecamp
+- https://www.youtube.com/c/amigoscode
+- https://www.youtube.com/c/B2Tech
+- https://www.youtube.com/channel/UC3hc8Ql0_OzMY7XI1gH9g8g/videos
+- https://www.youtube.com/c/BrightBoost/videos
+- https://www.youtube.com/c/JavaGuides/videos
+- https://www.youtube.com/c/DanVega/videos
+- https://www.youtube.com/c/JavaBrainsChannel
+- https://www.youtube.com/c/JavaShastra/videos
+- https://www.youtube.com/playlist?list=PLw_k9CF7hBpJJsRWAhwSrDlWAzuMV0irl
+- https://www.youtube.com/c/JavaInspires
+- https://www.youtube.com/playlist?list=PL9ooVrP1hQOEfi91PCFQMawtBJrPpir7y
+
+# Tools
+
+- https://www.jpa-buddy.com/
+- https://flywaydb.org/
+- https://www.liquibase.org/
+- https://hibernate.org/
+- https://projectlombok.org/
